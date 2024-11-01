@@ -1,7 +1,7 @@
 .home-screen-container {
   width: 100%;
   height: 100vh;
-  background-color: rgb(12, 12, 12);
+  background-color: rgb(59, 57, 57);
   margin: 0;
   padding: 0;
 }
@@ -21,23 +21,36 @@
   align-items: center;
   width: 100%;
   height: 60px;
-  /* background-color: aliceblue; */
 }
 
 .home-screen-currency-converter-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   height: 50%;
-  background-color: #00ff7f;
+  background-color: #06fc81;
   position: relative;
+}
+
+.selector-currency-converter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
 }
 
 .home-screen-graphic-container {
   width: 60%;
   height: 55%;
   border-radius: 12px;
-  background-color: rgb(12, 12, 12);
+  /* background-color: rgb(12, 12, 12); */
+  background-color: rgb(59, 57, 57);
+
   position: absolute;
   top: 292px;
+}
+
+.cotation-subtitle {
+  margin-top: 4px;
 }

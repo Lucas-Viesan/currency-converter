@@ -5,9 +5,17 @@ import { getApi } from "../../services/api";
 import { useEffect, useState } from "react";
 
 export const HomeScreen = () => {
-  const [converter, setConverter] = useState(0);
+  const [converter, setConverter] = useState(1);
   const [exchangeRates, setExchangeRates] = useState(null);
-  const options = ["USD", "GBP", "JPY", "CHF", "CAD", "AUD"];
+  const options = [
+    "EUR - Euro",
+    "USD - Dolar americano",
+    "GBP - Libra esterlina",
+    "JPY - Iene",
+    "CHF - Franco suiço",
+    "CAD - Dolar canadense",
+    "AUD - Dolar australiano",
+  ];
   const [selectedCurrency, setSelectedCurrency] = useState(""); // Novo estado para a moeda selecionada
 
   useEffect(() => {
@@ -27,6 +35,7 @@ export const HomeScreen = () => {
 
   const BRLRate = exchangeRates.BRL;
 
+  const converterEURToBRL = () => BRLRate;
   const converterUSDToBRL = () => BRLRate / exchangeRates.USD;
   const converterGBPToBRL = () => BRLRate / exchangeRates.GBP;
   const converterJPYToBRL = () => BRLRate / exchangeRates.JPY;
@@ -38,20 +47,22 @@ export const HomeScreen = () => {
     switch (
       selectedCurrency // Usa selectedCurrency ao invés de options
     ) {
-      case "USD":
+      case "EUR - Euro":
+        return converterEURToBRL();
+      case "USD - Dolar americano":
         return converterUSDToBRL();
-      case "GBP":
+      case "GBP - Libra esterlina":
         return converterGBPToBRL();
-      case "JPY":
+      case "JPY - Iene":
         return converterJPYToBRL();
-      case "CHF":
+      case "CHF - Franco suiço":
         return converterCHFToBRL();
-      case "CAD":
+      case "CAD - Dolar canadense":
         return converterCADToBRL();
-      case "AUD":
+      case "CAD - Dolar australiano":
         return converterAUDToBRL();
       default:
-        return 0;
+        return BRLRate;
     }
   };
 
@@ -62,6 +73,21 @@ export const HomeScreen = () => {
       <div className="home-screen-content-container">
         <div className="home-screen-navbar-container">
           <h2>Cotações</h2>
+          <div className="navbar-images-content ">
+            <img
+              className="navbar-images"
+              src="/images/uniao-europeia.png"
+            ></img>
+            <img
+              className="navbar-images"
+              src="/images/estados-unidos.png"
+            ></img>
+            <img className="navbar-images" src="/images/reino-unido.png"></img>
+            <img className="navbar-images" src="/images/japao.png"></img>
+            <img className="navbar-images" src="/images/suica.png"></img>
+            <img className="navbar-images" src="/images/australia.png"></img>
+            <img className="navbar-images" src="/images/canada.png"></img>
+          </div>
         </div>
         <div className="home-screen-currency-converter-container">
           <h3>{valorConvertido.toFixed(2)} Reais</h3>

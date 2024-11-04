@@ -1,5 +1,5 @@
 # Conversor de Moedas
-
+https://github.com/user-attachments/assets/1d2a538e-7feb-47a1-8307-649fc8ef7ebf
 ## Introdução
 
 O Conversor de Moedas é uma aplicação web que permite converter valores entre diferentes moedas de forma simples e intuitiva. Utilizando uma API de câmbio, o site oferece conversões em tempo real para diversas moedas populares, exibindo a taxa de câmbio e possibilitando cálculos com precisão.

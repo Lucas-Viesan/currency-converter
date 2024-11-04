@@ -1,5 +1,5 @@
 export const getApi = async () => {
-  const accessKey = "38341cf4c9defa5bc835d08ee804a8c2"; // Substitua por sua chave
+  const accessKey = "630ffeca0ddcda711be99b0f073bddcc"; // Substitua por sua chave
   const url = `https://api.exchangeratesapi.io/v1/latest?access_key=${accessKey}`;
 
   try {

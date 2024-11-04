@@ -1,7 +1,5 @@
 import "./index.css";
 
-import "./index.css";
-
 export const Input = ({ value = "", onChange }) => {
   return (
     <input

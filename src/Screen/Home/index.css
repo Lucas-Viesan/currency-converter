@@ -40,14 +40,14 @@
   align-items: center;
   width: 100%;
   height: 50%;
-  background-color: #06fc81;
+  background-color: #52b788;
   position: relative;
 }
 
 .selector-currency-converter {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   width: 40%;
 }
 
@@ -63,6 +63,14 @@
   margin-top: -12px;
 }
 
+.title-currency-convert-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .home-screen-graphic-container {
   width: 60%;
   height: 55%;
@@ -70,8 +78,81 @@
   background-color: #343a40;
   position: absolute;
   top: 292px;
+  padding-left: 5px;
+}
+
+.graphic-image {
+  width: 50%;
+  height: 65%;
+  margin-top: -15px;
+  margin-left: 25%;
 }
 
 .cotation-subtitle {
   margin-top: -8px;
+}
+
+@media screen and (max-width: 430px) {
+  .home-screen-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+  .navbar-images {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+  .home-screen-currency-converter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    background-color: #52b788;
+    position: relative;
+  }
+
+  .selector-currency-converter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    margin-left: 28px;
+  }
+
+  .selector-currency-converter-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding-left: 8px;
+    margin-top: -12px;
+  }
+  .cotation-subtitle {
+    margin-top: 5px;
+  }
+  .home-screen-graphic-container {
+    width: 80%;
+    height: 55%;
+    border-radius: 12px;
+    background-color: #343a40;
+    position: absolute;
+    top: 292px;
+    padding-left: 5px;
+  }
+
+  .graphic-image {
+    width: 90%;
+    height: 60%;
+    margin-top: 0px;
+    margin-left: 0%;
+  }
 }

@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 export const HomeScreen = () => {
   const [converter, setConverter] = useState(1);
   const [exchangeRates, setExchangeRates] = useState(null);
+  const [exchangeDate, setExchangeDate] = useState(null);
   const options = [
     "EUR - Euro",
     "USD - Dolar americano",
@@ -23,6 +24,7 @@ export const HomeScreen = () => {
       const result = await getApi();
       if (result && result.rates) {
         setExchangeRates(result.rates);
+        setExchangeDate(result.date);
       }
     };
 
@@ -68,6 +70,8 @@ export const HomeScreen = () => {
 
   const valorConvertido = currencySelect() * converter;
 
+  const data = new Date(exchangeDate);
+
   return (
     <div className="home-screen-container">
       <div className="home-screen-content-container">
@@ -77,22 +81,57 @@ export const HomeScreen = () => {
             <img
               className="navbar-images"
               src="/images/uniao-europeia.png"
+              alt="uniao europeia"
             ></img>
             <img
               className="navbar-images"
               src="/images/estados-unidos.png"
+              alt="estados unidos"
             ></img>
-            <img className="navbar-images" src="/images/reino-unido.png"></img>
-            <img className="navbar-images" src="/images/japao.png"></img>
-            <img className="navbar-images" src="/images/suica.png"></img>
-            <img className="navbar-images" src="/images/australia.png"></img>
-            <img className="navbar-images" src="/images/canada.png"></img>
+            <img
+              className="navbar-images"
+              src="/images/reino-unido.png"
+              alt="reino unido"
+            ></img>
+            <img
+              className="navbar-images"
+              src="/images/japao.png"
+              alt="japao"
+            ></img>
+            <img
+              className="navbar-images"
+              src="/images/suica.png"
+              alt="suica"
+            ></img>
+            <img
+              className="navbar-images"
+              src="/images/australia.png"
+              alt="australia"
+            ></img>
+            <img
+              className="navbar-images"
+              src="/images/canada.png"
+              alt="canada"
+            ></img>
           </div>
         </div>
         <div className="home-screen-currency-converter-container">
-          <h3>{valorConvertido.toFixed(2)} Reais</h3>
+          <div className="title-currency-convert-content">
+            <img
+              className="navbar-images"
+              src="/images/brasil.png"
+              alt="brasil"
+            ></img>
+            <h3>
+              {" "}
+              {currencySelect().toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </h3>
+          </div>
           <h5 className="cotation-subtitle">
-            1 Euro hoje 31 de outubro as 17:00
+            1 {selectedCurrency} hoje {data.toLocaleDateString()}
           </h5>
           <h5 className="cotation-subtitle">Comercial</h5>
           <div className="selector-currency-converter">
@@ -103,13 +142,19 @@ export const HomeScreen = () => {
               />
               <Input
                 onChange={(newValue) => setConverter(Number(newValue))}
-                value={converter}
+                value={converter.toFixed(2)}
               />
             </div>
           </div>
         </div>
         <div className="home-screen-graphic-container">
-          <h1>{valorConvertido.toFixed(2)}</h1>
+          <h1>
+            {valorConvertido.toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          </h1>
+          <img className="graphic-image" src="/images/grafico.png"></img>
         </div>
       </div>
     </div>

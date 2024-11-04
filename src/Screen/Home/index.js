@@ -154,7 +154,11 @@ export const HomeScreen = () => {
               currency: "BRL",
             })}
           </h1>
-          <img className="graphic-image" src="/images/grafico.png"></img>
+          <img
+            className="graphic-image"
+            src="/images/grafico.png"
+            alt="graphic"
+          ></img>
         </div>
       </div>
     </div>

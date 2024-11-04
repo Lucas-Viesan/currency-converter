@@ -68,7 +68,9 @@ export const HomeScreen = () => {
     }
   };
 
-  const valorConvertido = currencySelect() * converter;
+  const unidade = Math.floor(currencySelect() * 100) / 100;
+
+  const valorConvertido = unidade * converter;
 
   const data = new Date(exchangeDate);
 
@@ -124,7 +126,7 @@ export const HomeScreen = () => {
             ></img>
             <h3>
               {" "}
-              {currencySelect().toLocaleString("pt-BR", {
+              {unidade.toLocaleString("pt-BR", {
                 style: "currency",
                 currency: "BRL",
               })}
@@ -142,23 +144,18 @@ export const HomeScreen = () => {
               />
               <Input
                 onChange={(newValue) => setConverter(Number(newValue))}
-                value={converter.toFixed(2)}
+                value={converter}
               />
             </div>
           </div>
         </div>
         <div className="home-screen-graphic-container">
           <h1>
-            {valorConvertido.toLocaleString("pt-BR", {
+            {Number(valorConvertido.toFixed(2)).toLocaleString("pt-BR", {
               style: "currency",
               currency: "BRL",
             })}
           </h1>
-          <img
-            className="graphic-image"
-            src="/images/grafico.png"
-            alt="graphic"
-          ></img>
         </div>
       </div>
     </div>
